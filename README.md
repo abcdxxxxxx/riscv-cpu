@@ -42,10 +42,4 @@ Run Simulation
 verilator --binary --top-module cpu_core_tb rtl/*.sv tb/cpu_core_tb.sv
 ./obj_dir/Vcpu_core_tb
 
-Save karo:
 
-```bash
-git add README.md
-git commit -m "Add README"
-git push
-```
