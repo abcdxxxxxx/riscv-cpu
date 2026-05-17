@@ -12,7 +12,7 @@ module data_memory(
 
 );
 
-logic [31:0] mem [0:255];
+logic [31:0] mem [0:1023];
 
 
 // Write
@@ -20,7 +20,7 @@ always_ff @(posedge clk) begin
 
     if(mem_write)
 
-        mem[addr[9:2]] <= write_data;
+        mem[addr[11:2]] <= write_data;
 
 end
 
@@ -30,7 +30,7 @@ always_comb begin
 
     if(mem_read)
 
-        read_data = mem[addr[9:2]];
+        read_data = mem[addr[11:2]];
 
     else
 

@@ -18,6 +18,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vcpu_core_tb___024root final : public Verilat
     CData/*0:0*/ cpu_core_tb__DOT__clk;
     CData/*0:0*/ cpu_core_tb__DOT__reset;
     CData/*0:0*/ cpu_core_tb__DOT__dut__DOT__reg_write;
+    CData/*0:0*/ cpu_core_tb__DOT__dut__DOT__mem_write;
+    CData/*0:0*/ cpu_core_tb__DOT__dut__DOT__mem_read;
     CData/*0:0*/ cpu_core_tb__DOT__dut__DOT__branch;
     CData/*0:0*/ cpu_core_tb__DOT__dut__DOT__jump;
     CData/*2:0*/ cpu_core_tb__DOT__dut__DOT__alu_control;
@@ -36,6 +38,8 @@ class alignas(VL_CACHE_LINE_BYTES) Vcpu_core_tb___024root final : public Verilat
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__pc_current;
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__pc_next;
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__instruction;
+    IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__rs2_data;
+    IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__mem_read_data;
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__alu_result;
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__immediate;
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__fwd_result_1;
@@ -44,8 +48,9 @@ class alignas(VL_CACHE_LINE_BYTES) Vcpu_core_tb___024root final : public Verilat
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT__fwd_result_4;
     IData/*31:0*/ cpu_core_tb__DOT__dut__DOT____VdfgRegularize_h6dbabbbd_0_0;
     IData/*31:0*/ __VactIterCount;
-    VlUnpacked<IData/*31:0*/, 256> cpu_core_tb__DOT__dut__DOT__imem_inst__DOT__mem;
+    VlUnpacked<IData/*31:0*/, 1024> cpu_core_tb__DOT__dut__DOT__imem_inst__DOT__mem;
     VlUnpacked<IData/*31:0*/, 32> cpu_core_tb__DOT__dut__DOT__rf_inst__DOT__regs;
+    VlUnpacked<IData/*31:0*/, 1024> cpu_core_tb__DOT__dut__DOT__dmem_inst__DOT__mem;
     VlDelayScheduler __VdlySched;
     VlTriggerVec<1> __VstlTriggered;
     VlTriggerVec<4> __VactTriggered;

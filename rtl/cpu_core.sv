@@ -40,7 +40,7 @@ logic [31:0] mem_read_data;
 logic [31:0] alu_result;
 logic [31:0] immediate;
 logic [31:0] alu_b;
-logic [31:0] memory_read_data;
+
 
 // Next PC
 assign pc_next =
@@ -108,7 +108,7 @@ register_file rf_inst(
     .reg_write(reg_write),
 
     .rd(rd),
-    .write_data(alu_result)
+    .write_data(mem_read ? mem_read_data : alu_result)
 );
 
 // Immediate Generator
@@ -126,7 +126,8 @@ logic [4:0]  fwd_rd_1, fwd_rd_2, fwd_rd_3, fwd_rd_4;
 logic        fwd_we_1, fwd_we_2, fwd_we_3, fwd_we_4;
 
 always_ff @(posedge clk) begin
-    fwd_result_1 <= alu_result;  fwd_rd_1 <= rd;  fwd_we_1 <= reg_write;
+    fwd_result_1 <= mem_read ? mem_read_data : alu_result;
+    fwd_rd_1 <= rd;  fwd_we_1 <= reg_write;
     fwd_result_2 <= fwd_result_1; fwd_rd_2 <= fwd_rd_1; fwd_we_2 <= fwd_we_1;
     fwd_result_3 <= fwd_result_2; fwd_rd_3 <= fwd_rd_2; fwd_we_3 <= fwd_we_2;
     fwd_result_4 <= fwd_result_3; fwd_rd_4 <= fwd_rd_3; fwd_we_4 <= fwd_we_3;
@@ -178,8 +179,8 @@ data_memory dmem_inst(
 );
 
 always_ff @(negedge clk) begin
-  $display("PC=%h | INST=%h | RD=%0d | ALU=%0d",
-    pc_current, instruction, rd, alu_result);
+  $display("PC=%h | INST=%h | RD=%0d | ALU=%0d | MEM=%0d | MW=%b | MR=%b",
+    pc_current, instruction, rd, alu_result, mem_read_data, mem_write, mem_read);
 end
 
 endmodule

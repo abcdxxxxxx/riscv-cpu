@@ -6,6 +6,31 @@
 #include "Vcpu_core_tb__Syms.h"
 #include "Vcpu_core_tb___024root.h"
 
+VL_INLINE_OPT VlCoroutine Vcpu_core_tb___024root___eval_initial__TOP__Vtiming__0(Vcpu_core_tb___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vcpu_core_tb__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vcpu_core_tb___024root___eval_initial__TOP__Vtiming__0\n"); );
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Init
+    VlWide<3>/*95:0*/ __Vtemp_1;
+    // Body
+    __Vtemp_1[0U] = 0x2e766364U;
+    __Vtemp_1[1U] = 0x61766573U;
+    __Vtemp_1[2U] = 0x77U;
+    vlSymsp->_vm_contextp__->dumpfile(VL_CVT_PACK_STR_NW(3, __Vtemp_1));
+    VL_PRINTF_MT("-Info: tb/cpu_core_tb.sv:14: $dumpvar ignored, as Verilated without --trace\n");
+    vlSelfRef.cpu_core_tb__DOT__clk = 0U;
+    vlSelfRef.cpu_core_tb__DOT__reset = 1U;
+    co_await vlSelfRef.__VdlySched.delay(0xaULL, nullptr, 
+                                         "tb/cpu_core_tb.sv", 
+                                         17);
+    vlSelfRef.cpu_core_tb__DOT__reset = 0U;
+    co_await vlSelfRef.__VdlySched.delay(0x15eULL, 
+                                         nullptr, "tb/cpu_core_tb.sv", 
+                                         19);
+    VL_FINISH_MT("tb/cpu_core_tb.sv", 20, "");
+}
+
 #ifdef VL_DEBUG
 VL_ATTR_COLD void Vcpu_core_tb___024root___dump_triggers__act(Vcpu_core_tb___024root* vlSelf);
 #endif  // VL_DEBUG

@@ -3,12 +3,12 @@ module instruction_memory(
     output logic [31:0] instruction
 );
 
-logic [31:0] mem [0:255];
+logic [31:0] mem [0:1023];
 
 initial begin
     $readmemh("tests/program.mem", mem);
 end
 
-assign instruction = mem[addr[9:2]];
+assign instruction = mem[addr[11:2]];
 
 endmodule
