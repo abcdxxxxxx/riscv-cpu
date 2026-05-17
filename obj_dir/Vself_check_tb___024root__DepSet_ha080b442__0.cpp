@@ -35,20 +35,45 @@ VL_INLINE_OPT VlCoroutine Vself_check_tb___024root___eval_initial__TOP__Vtiming_
     __Vtask_self_check_tb__DOT__check__0__got = 0;
     IData/*31:0*/ __Vtask_self_check_tb__DOT__check__0__expected;
     __Vtask_self_check_tb__DOT__check__0__expected = 0;
+    std::string __Vtask_self_check_tb__DOT__check__1__name;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__1__got;
+    __Vtask_self_check_tb__DOT__check__1__got = 0;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__1__expected;
+    __Vtask_self_check_tb__DOT__check__1__expected = 0;
+    std::string __Vtask_self_check_tb__DOT__check__2__name;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__2__got;
+    __Vtask_self_check_tb__DOT__check__2__got = 0;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__2__expected;
+    __Vtask_self_check_tb__DOT__check__2__expected = 0;
+    std::string __Vtask_self_check_tb__DOT__check__3__name;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__3__got;
+    __Vtask_self_check_tb__DOT__check__3__got = 0;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__3__expected;
+    __Vtask_self_check_tb__DOT__check__3__expected = 0;
+    std::string __Vtask_self_check_tb__DOT__check__4__name;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__4__got;
+    __Vtask_self_check_tb__DOT__check__4__got = 0;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__4__expected;
+    __Vtask_self_check_tb__DOT__check__4__expected = 0;
+    std::string __Vtask_self_check_tb__DOT__check__5__name;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__5__got;
+    __Vtask_self_check_tb__DOT__check__5__got = 0;
+    IData/*31:0*/ __Vtask_self_check_tb__DOT__check__5__expected;
+    __Vtask_self_check_tb__DOT__check__5__expected = 0;
     // Body
     vlSelfRef.self_check_tb__DOT__clk = 0U;
     vlSelfRef.self_check_tb__DOT__reset = 1U;
     co_await vlSelfRef.__VdlySched.delay(0xaULL, nullptr, 
                                          "tb/self_check_tb.sv", 
-                                         27);
+                                         31);
     vlSelfRef.self_check_tb__DOT__reset = 0U;
-    co_await vlSelfRef.__VdlySched.delay(0x118ULL, 
-                                         nullptr, "tb/self_check_tb.sv", 
-                                         29);
+    co_await vlSelfRef.__VdlySched.delay(0xc8ULL, nullptr, 
+                                         "tb/self_check_tb.sv", 
+                                         33);
     __Vtask_self_check_tb__DOT__check__0__expected = 8U;
     __Vtask_self_check_tb__DOT__check__0__got = vlSelfRef.self_check_tb__DOT__dut__DOT__rf_inst__DOT__regs
-        [0xaU];
-    __Vtask_self_check_tb__DOT__check__0__name = std::string{"add(5,3) = x10"};
+        [3U];
+    __Vtask_self_check_tb__DOT__check__0__name = std::string{"ADD  x3 = 5+3"};
     if ((__Vtask_self_check_tb__DOT__check__0__got 
          == __Vtask_self_check_tb__DOT__check__0__expected)) {
         VL_WRITEF_NX("PASS: %@ = %0#\n",0,-1,&(__Vtask_self_check_tb__DOT__check__0__name),
@@ -63,15 +88,105 @@ VL_INLINE_OPT VlCoroutine Vself_check_tb___024root___eval_initial__TOP__Vtiming_
         vlSelfRef.self_check_tb__DOT__fail_count = 
             ((IData)(1U) + vlSelfRef.self_check_tb__DOT__fail_count);
     }
+    __Vtask_self_check_tb__DOT__check__1__expected = 0xaU;
+    __Vtask_self_check_tb__DOT__check__1__got = vlSelfRef.self_check_tb__DOT__dut__DOT__rf_inst__DOT__regs
+        [4U];
+    __Vtask_self_check_tb__DOT__check__1__name = std::string{"ADDI x4 = 10"};
+    if ((__Vtask_self_check_tb__DOT__check__1__got 
+         == __Vtask_self_check_tb__DOT__check__1__expected)) {
+        VL_WRITEF_NX("PASS: %@ = %0#\n",0,-1,&(__Vtask_self_check_tb__DOT__check__1__name),
+                     32,__Vtask_self_check_tb__DOT__check__1__got);
+        vlSelfRef.self_check_tb__DOT__pass_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__pass_count);
+    } else {
+        VL_WRITEF_NX("FAIL: %@ = %0# (expected %0#)\n",0,
+                     -1,&(__Vtask_self_check_tb__DOT__check__1__name),
+                     32,__Vtask_self_check_tb__DOT__check__1__got,
+                     32,__Vtask_self_check_tb__DOT__check__1__expected);
+        vlSelfRef.self_check_tb__DOT__fail_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__fail_count);
+    }
+    __Vtask_self_check_tb__DOT__check__2__expected = 2U;
+    __Vtask_self_check_tb__DOT__check__2__got = vlSelfRef.self_check_tb__DOT__dut__DOT__rf_inst__DOT__regs
+        [5U];
+    __Vtask_self_check_tb__DOT__check__2__name = std::string{"SUB  x5 = 5-3"};
+    if ((__Vtask_self_check_tb__DOT__check__2__got 
+         == __Vtask_self_check_tb__DOT__check__2__expected)) {
+        VL_WRITEF_NX("PASS: %@ = %0#\n",0,-1,&(__Vtask_self_check_tb__DOT__check__2__name),
+                     32,__Vtask_self_check_tb__DOT__check__2__got);
+        vlSelfRef.self_check_tb__DOT__pass_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__pass_count);
+    } else {
+        VL_WRITEF_NX("FAIL: %@ = %0# (expected %0#)\n",0,
+                     -1,&(__Vtask_self_check_tb__DOT__check__2__name),
+                     32,__Vtask_self_check_tb__DOT__check__2__got,
+                     32,__Vtask_self_check_tb__DOT__check__2__expected);
+        vlSelfRef.self_check_tb__DOT__fail_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__fail_count);
+    }
+    __Vtask_self_check_tb__DOT__check__3__expected = 1U;
+    __Vtask_self_check_tb__DOT__check__3__got = vlSelfRef.self_check_tb__DOT__dut__DOT__rf_inst__DOT__regs
+        [6U];
+    __Vtask_self_check_tb__DOT__check__3__name = std::string{"AND  x6 = 5&3"};
+    if ((__Vtask_self_check_tb__DOT__check__3__got 
+         == __Vtask_self_check_tb__DOT__check__3__expected)) {
+        VL_WRITEF_NX("PASS: %@ = %0#\n",0,-1,&(__Vtask_self_check_tb__DOT__check__3__name),
+                     32,__Vtask_self_check_tb__DOT__check__3__got);
+        vlSelfRef.self_check_tb__DOT__pass_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__pass_count);
+    } else {
+        VL_WRITEF_NX("FAIL: %@ = %0# (expected %0#)\n",0,
+                     -1,&(__Vtask_self_check_tb__DOT__check__3__name),
+                     32,__Vtask_self_check_tb__DOT__check__3__got,
+                     32,__Vtask_self_check_tb__DOT__check__3__expected);
+        vlSelfRef.self_check_tb__DOT__fail_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__fail_count);
+    }
+    __Vtask_self_check_tb__DOT__check__4__expected = 7U;
+    __Vtask_self_check_tb__DOT__check__4__got = vlSelfRef.self_check_tb__DOT__dut__DOT__rf_inst__DOT__regs
+        [7U];
+    __Vtask_self_check_tb__DOT__check__4__name = std::string{"OR   x7 = 5|3"};
+    if ((__Vtask_self_check_tb__DOT__check__4__got 
+         == __Vtask_self_check_tb__DOT__check__4__expected)) {
+        VL_WRITEF_NX("PASS: %@ = %0#\n",0,-1,&(__Vtask_self_check_tb__DOT__check__4__name),
+                     32,__Vtask_self_check_tb__DOT__check__4__got);
+        vlSelfRef.self_check_tb__DOT__pass_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__pass_count);
+    } else {
+        VL_WRITEF_NX("FAIL: %@ = %0# (expected %0#)\n",0,
+                     -1,&(__Vtask_self_check_tb__DOT__check__4__name),
+                     32,__Vtask_self_check_tb__DOT__check__4__got,
+                     32,__Vtask_self_check_tb__DOT__check__4__expected);
+        vlSelfRef.self_check_tb__DOT__fail_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__fail_count);
+    }
+    __Vtask_self_check_tb__DOT__check__5__expected = 1U;
+    __Vtask_self_check_tb__DOT__check__5__got = vlSelfRef.self_check_tb__DOT__dut__DOT__rf_inst__DOT__regs
+        [0x1fU];
+    __Vtask_self_check_tb__DOT__check__5__name = std::string{"PASS x31 = 1"};
+    if ((__Vtask_self_check_tb__DOT__check__5__got 
+         == __Vtask_self_check_tb__DOT__check__5__expected)) {
+        VL_WRITEF_NX("PASS: %@ = %0#\n",0,-1,&(__Vtask_self_check_tb__DOT__check__5__name),
+                     32,__Vtask_self_check_tb__DOT__check__5__got);
+        vlSelfRef.self_check_tb__DOT__pass_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__pass_count);
+    } else {
+        VL_WRITEF_NX("FAIL: %@ = %0# (expected %0#)\n",0,
+                     -1,&(__Vtask_self_check_tb__DOT__check__5__name),
+                     32,__Vtask_self_check_tb__DOT__check__5__got,
+                     32,__Vtask_self_check_tb__DOT__check__5__expected);
+        vlSelfRef.self_check_tb__DOT__fail_count = 
+            ((IData)(1U) + vlSelfRef.self_check_tb__DOT__fail_count);
+    }
     VL_WRITEF_NX("--- Results: %0d PASS, %0d FAIL ---\n",0,
                  32,vlSelfRef.self_check_tb__DOT__pass_count,
                  32,vlSelfRef.self_check_tb__DOT__fail_count);
     if ((0U == vlSelfRef.self_check_tb__DOT__fail_count)) {
-        VL_WRITEF_NX("ALL TESTS PASSED!\n",0);
+        VL_WRITEF_NX("ALL COMPLIANCE TESTS PASSED!\n",0);
     } else {
         VL_WRITEF_NX("SOME TESTS FAILED!\n",0);
     }
-    VL_FINISH_MT("tb/self_check_tb.sv", 38, "");
+    VL_FINISH_MT("tb/self_check_tb.sv", 47, "");
 }
 
 VL_INLINE_OPT VlCoroutine Vself_check_tb___024root___eval_initial__TOP__Vtiming__1(Vself_check_tb___024root* vlSelf) {

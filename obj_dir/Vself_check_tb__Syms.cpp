@@ -18,7 +18,7 @@ Vself_check_tb__Syms::Vself_check_tb__Syms(VerilatedContext* contextp, const cha
     , TOP{this, namep}
 {
         // Check resources
-        Verilated::stackCheck(132);
+        Verilated::stackCheck(212);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-12);
     _vm_contextp__->timeprecision(-12);

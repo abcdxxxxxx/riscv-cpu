@@ -1,0 +1,19 @@
+# Read files
+read_verilog -sv rtl/pc.sv
+read_verilog -sv rtl/instruction_memory.sv
+read_verilog -sv rtl/decoder.sv
+read_verilog -sv rtl/control_unit.sv
+read_verilog -sv rtl/register_file.sv
+read_verilog -sv rtl/immediate_generator.sv
+read_verilog -sv rtl/alu.sv
+read_verilog -sv rtl/data_memory.sv
+read_verilog -sv rtl/cpu_core.sv
+
+# Elaborate each module separately
+hierarchy -check -top cpu_core
+
+# Synthesize
+synth -top cpu_core
+
+# Stats
+stat -top cpu_core
