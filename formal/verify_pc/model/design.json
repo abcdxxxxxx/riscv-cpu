@@ -1,0 +1,482 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "pc",
+        "cell_sorts": [
+          {
+            "type": "$adff",
+            "ports": [
+                {
+                  "name": "ARST",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$35",
+                  "attributes": {
+                    "always_ff": "00000000000000000000000000000001",
+                    "src": "pc.sv:8.1-13.4"
+                  },
+                  "parameters": {
+                    "ARST_POLARITY": "1",
+                    "ARST_VALUE": "00000000000000000000000000000000",
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "hdlname": "pc",
+            "src": "pc.sv:1.1-15.10"
+        }
+      },
+      {
+        "name": "pc_properties",
+        "cell_sorts": [
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procmux$27",
+                  "attributes": {
+                    "src": "pc_properties.sv:38.13-38.50|pc_properties.sv:38.9-39.48"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$29",
+                  "attributes": {
+                    "src": "pc_properties.sv:28.13-28.35|pc_properties.sv:28.9-29.46"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$31",
+                  "attributes": {
+                    "src": "pc_properties.sv:23.13-23.34|pc_properties.sv:23.9-24.41"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [32, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$procdff$36",
+                  "attributes": {
+                    "src": "pc_properties.sv:34.5-35.33"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000100000"
+                  }
+                },
+                {
+                  "name": "$procdff$37",
+                  "attributes": {
+                    "src": "pc_properties.sv:19.5-19.47"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$38",
+                  "attributes": {
+                    "src": "pc_properties.sv:15.5-15.44"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.check_assert_pc_properties_sv_24_8",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_pc_properties_sv_24_8",
+                    "src": "pc_properties.sv:24.13-24.40"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_pc_properties_sv_29_14",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_pc_properties_sv_29_14",
+                    "src": "pc_properties.sv:29.13-29.45"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assert_pc_properties_sv_39_23",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assert_pc_properties_sv_39_23",
+                    "src": "pc_properties.sv:39.13-39.47"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_assume_pc_properties_sv_8_1",
+                  "attributes": {
+                    "hdlname": "_witness_ check_assume_pc_properties_sv_8_1",
+                    "src": "pc_properties.sv:8.13-11.44"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assume",
+                    "FORMAT": true,
+                    "PRIORITY": "00000000000000000000000000000000",
+                    "TRG_ENABLE": "00000000000000000000000000000000",
+                    "TRG_POLARITY": "00000000000000000000000000000000",
+                    "TRG_WIDTH": "00000000000000000000000000000000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$logic_and$pc_properties.sv:23$7",
+                  "attributes": {
+                    "src": "pc_properties.sv:23.13-23.34"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$pc_properties.sv:28$13",
+                  "attributes": {
+                    "src": "pc_properties.sv:28.13-28.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$pc_properties.sv:38$22",
+                  "attributes": {
+                    "src": "pc_properties.sv:38.13-38.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$pc_properties.sv:39$24",
+                  "attributes": {
+                    "src": "pc_properties.sv:39.20-39.46"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "pc",
+            "ports": [
+                {
+                  "name": "clk",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "current_pc",
+                  "direction": "",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "next_pc",
+                  "direction": "io",
+                  "range": [32, 0]
+                },
+                {
+                  "name": "reset",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "dut",
+                  "attributes": {
+                    "module_not_derived": "00000000000000000000000000000001",
+                    "src": "pc_properties.sv:8.4-8.12"
+                  },
+                  "parameters": {
+
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$eq$pc_properties.sv:11$2",
+                  "attributes": {
+                    "src": "pc_properties.sv:11.22-11.43"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$pc_properties.sv:24$9",
+                  "attributes": {
+                    "src": "pc_properties.sv:24.20-24.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000100000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$pc_properties.sv:29$15",
+                  "attributes": {
+                    "src": "pc_properties.sv:29.20-29.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$pc_properties.sv:23$6",
+                  "attributes": {
+                    "src": "pc_properties.sv:23.13-23.25"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$pc_properties.sv:28$12",
+                  "attributes": {
+                    "src": "pc_properties.sv:28.29-28.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_not$pc_properties.sv:38$21",
+                  "attributes": {
+                    "src": "pc_properties.sv:38.39-38.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "hdlname": "pc_properties",
+            "top": "00000000000000000000000000000001",
+            "src": "pc_properties.sv:1.1-42.10"
+        }
+      }
+  ]
+}

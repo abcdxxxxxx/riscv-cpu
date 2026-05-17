@@ -1,0 +1,320 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: pc.sv
+Parsing formal SystemVerilog input from `pc.sv' to AST representation.
+Storing AST representation for module `$abstract\pc'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: pc_properties.sv
+Parsing formal SystemVerilog input from `pc_properties.sv' to AST representation.
+Storing AST representation for module `$abstract\pc_properties'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\pc_properties'.
+Generating RTLIL representation for module `\pc_properties'.
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \pc_properties
+
+3.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\pc'.
+Generating RTLIL representation for module `\pc'.
+
+3.2.3. Analyzing design hierarchy..
+Top module:  \pc_properties
+Used module:     \pc
+
+3.2.4. Analyzing design hierarchy..
+Top module:  \pc_properties
+Used module:     \pc
+Removing unused module `$abstract\pc_properties'.
+Removing unused module `$abstract\pc'.
+Removed 2 unused modules.
+Module pc_properties directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$pc.sv:8$26 in module pc.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 4 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\pc_properties.$proc$pc_properties.sv:0$25'.
+  Set init value: \first_cycle = 1'1
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\pc.$proc$pc.sv:8$26'.
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\pc.$proc$pc.sv:8$26'.
+     1/1: $0\current_pc[31:0]
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:0$25'.
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:37$17'.
+     1/1: $assert$pc_properties.sv:39$23_EN
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:34$16'.
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:27$10'.
+     1/1: $assert$pc_properties.sv:29$14_EN
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:22$5'.
+     1/1: $assert$pc_properties.sv:24$8_EN
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:19$4'.
+Creating decoders for process `\pc_properties.$proc$pc_properties.sv:15$3'.
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\pc.\current_pc' using process `\pc.$proc$pc.sv:8$26'.
+  created $adff cell `$procdff$35' with positive edge clock and positive level reset.
+Creating register for signal `\pc_properties.\prev_next_pc' using process `\pc_properties.$proc$pc_properties.sv:34$16'.
+  created $dff cell `$procdff$36' with positive edge clock.
+Creating register for signal `\pc_properties.\prev_reset' using process `\pc_properties.$proc$pc_properties.sv:19$4'.
+  created $dff cell `$procdff$37' with positive edge clock.
+Creating register for signal `\pc_properties.\first_cycle' using process `\pc_properties.$proc$pc_properties.sv:15$3'.
+  created $dff cell `$procdff$38' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `pc.$proc$pc.sv:8$26'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:0$25'.
+Found and cleaned up 1 empty switch in `\pc_properties.$proc$pc_properties.sv:37$17'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:37$17'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:34$16'.
+Found and cleaned up 1 empty switch in `\pc_properties.$proc$pc_properties.sv:27$10'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:27$10'.
+Found and cleaned up 1 empty switch in `\pc_properties.$proc$pc_properties.sv:22$5'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:22$5'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:19$4'.
+Removing empty process `pc_properties.$proc$pc_properties.sv:15$3'.
+Cleaned up 3 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+<suppressed ~1 debug messages>
+Optimizing module pc_properties.
+<suppressed ~3 debug messages>
+
+3.4. Executing FUTURE pass.
+
+3.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module pc_properties.
+
+3.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \pc_properties..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~2 debug messages>
+
+3.7. Executing CHECK pass (checking for obvious problems).
+Checking module pc...
+Checking module pc_properties...
+Found and reported 0 problems.
+
+3.8. Executing OPT pass (performing simple optimizations).
+
+3.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module pc_properties.
+
+3.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Finding identical cells in module `\pc_properties'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \pc_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pc.
+  Optimizing cells in module \pc_properties.
+Performed a total of 0 changes.
+
+3.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Finding identical cells in module `\pc_properties'.
+Removed a total of 0 cells.
+
+3.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \pc_properties..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+3.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module pc_properties.
+
+3.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \pc..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \pc_properties..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+3.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \pc.
+  Optimizing cells in module \pc_properties.
+Performed a total of 0 changes.
+
+3.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Finding identical cells in module `\pc_properties'.
+Removed a total of 0 cells.
+
+3.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \pc_properties..
+
+3.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module pc_properties.
+
+3.8.14. Finished OPT passes. (There is nothing left to do.)
+
+3.9. Executing WREDUCE pass (reducing word size of cells).
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \pc_properties..
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module pc.
+Optimizing module pc_properties.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\pc'.
+Finding identical cells in module `\pc_properties'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \pc..
+Finding unused cells or wires in module \pc_properties..
+
+3.12.4. Finished fast OPT passes.
+
+3.13. Printing statistics.
+
+=== pc ===
+
+   Number of wires:                  4
+   Number of wire bits:             66
+   Number of public wires:           4
+   Number of public wire bits:      66
+   Number of ports:                  4
+   Number of port bits:             66
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  1
+     $adff                           1
+
+=== pc_properties ===
+
+   Number of wires:                 20
+   Number of wire bits:            113
+   Number of public wires:           7
+   Number of public wire bits:     100
+   Number of ports:                  3
+   Number of port bits:             34
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     $check                          4
+     $dff                            3
+     $eq                             1
+     $logic_and                      3
+     $logic_not                      6
+     $mux                            3
+     pc                              1
+
+=== design hierarchy ===
+
+   pc_properties                     1
+     pc                              1
+
+   Number of wires:                 24
+   Number of wire bits:            179
+   Number of public wires:          11
+   Number of public wire bits:     166
+   Number of ports:                  7
+   Number of port bits:            100
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     $adff                           1
+     $check                          4
+     $dff                            3
+     $eq                             1
+     $logic_and                      3
+     $logic_not                      6
+     $mux                            3
+
+3.14. Executing CHECK pass (checking for obvious problems).
+Checking module pc...
+Checking module pc_properties...
+Found and reported 0 problems.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `pc_properties'. Setting top module to pc_properties.
+
+4.1. Analyzing design hierarchy..
+Top module:  \pc_properties
+Used module:     \pc
+
+4.2. Analyzing design hierarchy..
+Top module:  \pc_properties
+Used module:     \pc
+Removed 0 unused modules.
+Module pc_properties directly or indirectly contains formal properties -> setting "keep" attribute.
+
+5. Executing jny backend.
+
+6. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: d24cd533dd, CPU: user 0.02s system 0.00s, MEM: 17.10 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 34% 6x opt_expr (0 sec), 19% 5x opt_clean (0 sec), ...

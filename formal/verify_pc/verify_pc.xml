@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-05-17T07:26:03" hostname="MSI" package="verify_pc" id="0" name="default" tests="3" errors="0" failures="0" time="0" skipped="0">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="PASS"/>
+</properties>
+<testcase classname="default" name="build execution" time="0">
+</testcase>
+<testcase classname="default" name="Property ASSERT in pc_properties at pc_properties.sv:24.13-24.40" time="0" type="ASSERT" location="pc_properties.sv:24.13-24.40" id="_witness_.check_assert_pc_properties_sv_24_8">
+</testcase>
+<testcase classname="default" name="Property ASSERT in pc_properties at pc_properties.sv:29.13-29.45" time="0" type="ASSERT" location="pc_properties.sv:29.13-29.45" id="_witness_.check_assert_pc_properties_sv_29_14">
+</testcase>
+<testcase classname="default" name="Property ASSERT in pc_properties at pc_properties.sv:39.13-39.47" time="0" type="ASSERT" location="pc_properties.sv:39.13-39.47" id="_witness_.check_assert_pc_properties_sv_39_23">
+</testcase>
+<system-out>SBY  7:26:03 [formal/verify_pc] Removing directory '/home/rajnidhi/riscv_cpu/formal/verify_pc'.
+SBY  7:26:03 [formal/verify_pc] Copy '/home/rajnidhi/riscv_cpu/rtl/pc.sv' to '/home/rajnidhi/riscv_cpu/formal/verify_pc/src/pc.sv'.
+SBY  7:26:03 [formal/verify_pc] Copy '/home/rajnidhi/riscv_cpu/formal/pc_properties.sv' to '/home/rajnidhi/riscv_cpu/formal/verify_pc/src/pc_properties.sv'.
+SBY  7:26:03 [formal/verify_pc] engine_0: smtbmc z3
+SBY  7:26:03 [formal/verify_pc] base: starting process &quot;cd formal/verify_pc/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY  7:26:03 [formal/verify_pc] base: finished (returncode=0)
+SBY  7:26:03 [formal/verify_pc] prep: starting process &quot;cd formal/verify_pc/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY  7:26:03 [formal/verify_pc] prep: finished (returncode=0)
+SBY  7:26:03 [formal/verify_pc] smt2: starting process &quot;cd formal/verify_pc/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY  7:26:03 [formal/verify_pc] smt2: finished (returncode=0)
+SBY  7:26:03 [formal/verify_pc] engine_0: starting process &quot;cd formal/verify_pc; yosys-smtbmc -s z3 --presat --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Solver: z3
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY  7:26:03 [formal/verify_pc] engine_0: ##   0:00:00  Status: passed
+SBY  7:26:03 [formal/verify_pc] engine_0: finished (returncode=0)
+SBY  7:26:03 [formal/verify_pc] engine_0: Status returned by engine: pass
+SBY  7:26:03 [formal/verify_pc] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  7:26:03 [formal/verify_pc] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY  7:26:03 [formal/verify_pc] summary: engine_0 (smtbmc z3) returned pass
+SBY  7:26:03 [formal/verify_pc] summary: engine_0 did not produce any traces
+SBY  7:26:03 [formal/verify_pc] DONE (PASS, rc=0)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

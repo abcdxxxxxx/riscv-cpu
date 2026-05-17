@@ -1,0 +1,9 @@
+# running in formal/verify_pc/src/
+read -formal pc.sv
+read -formal pc_properties.sv
+prep -top pc_properties
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

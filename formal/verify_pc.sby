@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 10
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal pc.sv
+read -formal pc_properties.sv
+prep -top pc_properties
+
+[files]
+rtl/pc.sv
+formal/pc_properties.sv
